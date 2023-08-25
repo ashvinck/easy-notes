@@ -8,10 +8,7 @@ export default function Home() {
       <div className={styles.wrapper}>
         <div className={styles.greeting}>
           {/* ------ Greetings ---- */}
-          <h1>
-            <span className={styles.hello}>Hello,</span>
-            <span className={styles.welcome}>Welcome to Easy Notes</span>
-          </h1>
+          <h1>Hello, Welcome to Easy Notes</h1>
         </div>
 
         {/* ------ Image -------- */}
@@ -19,7 +16,7 @@ export default function Home() {
           <Image
             className={styles.logo}
             src='/images/easynoteslanding.png'
-            alt='Next.js Logo'
+            alt='Logo'
             width={600}
             height={600}
             priority

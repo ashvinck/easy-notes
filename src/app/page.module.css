@@ -19,9 +19,6 @@
 .greeting{
   font-family: var(--font-mono);
   text-align: center;
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .center{

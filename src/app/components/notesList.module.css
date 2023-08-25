@@ -1,0 +1,39 @@
+
+.wrapper{
+background: rgba(var(--background-light-blue-rgba));
+  padding: 10px;
+  font-family: var(--font-mono);
+}
+
+.cardsWrapper{
+  margin: 10px 0px 10px 0px;
+}
+
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.input{
+  padding: 5px;
+  border-radius: var(--input-border-radius);
+  max-width: 250px;
+  width: 100%;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.input:focus{
+  border-color: rgb(92, 148, 252);
+  outline: none;
+}
+.small{
+  color:rgb(179, 177, 177); ;
+}
