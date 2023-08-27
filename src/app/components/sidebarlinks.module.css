@@ -12,11 +12,7 @@
 }
 
 .listItem:hover{
-  background-color: black;
-}
-
-.listItem:active{
-  background-color: aqua;
+  background-color: rgba(var(--hover-over-list-rgb));
 }
 
 .items{

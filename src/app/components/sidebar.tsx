@@ -9,6 +9,7 @@ const Sidebar: React.FC = () => {
       <Sidebarlinks />
       <hr />
       <Categories />
+      <hr />
     </div>
   );
 };

@@ -17,15 +17,15 @@ const Page = () => {
       {/* ---- Displaying content and layout above md screens ---  */}
       <div className='d-none d-sm-none d-md-block'>
         <div className='row'>
-          <div className='col-3 g-0'>
+          <div className='col-3 col-lg-2 g-0'>
             <Sidebar />
           </div>
-          <div className='col-9'>
+          <div className='col-9 col-lg-10'>
             <div className='row'>
-              <div className='col-5 g-0'>
+              <div className='col-5 col-lg-4 g-0'>
                 <NotesList />
               </div>
-              <div className='col-7 g-0'>
+              <div className='col-7 col-lg-8  g-0'>
                 <TextEditor />
               </div>
             </div>

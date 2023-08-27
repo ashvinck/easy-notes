@@ -1,4 +1,13 @@
-.textEditorWrapper{
+.wrapper{
   height: 100vh;
-  padding: 10px;
+  font-family: var(--font-mono);
+}
+
+.inputArea {
+  border: none;
+  height: 100%;
+  width: 100%;
+  padding: 10px 15px 10px 15px;
+  box-sizing: border-box;
+  outline: none;
 }
