@@ -1,20 +1,8 @@
 
 .sidebarWrapper{
-  background: rgba(var(--background-black-rgb));
-  height: 100vh;
+background: rgba(var(--background-black-rgb));
+height: 100vh;
+color: rgb(208,208,208);
+font-family: var(--font-mono); 
 }
 
-.listItem{
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.3s;
-}
-
-.icon{
-  margin-right: 15px;
-}

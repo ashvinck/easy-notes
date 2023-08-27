@@ -1,0 +1,35 @@
+.wrapper{
+  /* padding-top: 20px; */
+  padding-left: 0px;
+}
+.heading{
+  color: rgb(122, 122, 122);
+  padding-left: 25px;
+}
+
+.list{
+  padding-left:0px;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.3s;
+}
+
+.listItem:hover {
+  background-color: black;
+}
+
+.listItem:active {
+  background-color: aqua;
+}
+
+.items {
+  padding: 10px 10px 10px 30px;
+}
+.icon {
+  margin-right: 15px;
+}
