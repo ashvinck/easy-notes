@@ -26,7 +26,7 @@ export const notesSlice = createSlice({
   reducers: {
     // to add notes 
     addNote: (state, action: PayloadAction<Note>) => {
-      state.notes.push(action.payload);
+      state.notes.unshift(action.payload);
     },
     // to get note id for selecting particular notes
     addNoteId: (state, action: PayloadAction<string>) => {

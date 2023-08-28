@@ -8,3 +8,12 @@
 .links{
   padding: 9px;
 }
+.links:hover:not(.active) {
+  background-color: rgba(var(--background-blue-rgb));
+  border-radius: 12px;
+}
+
+.active{
+  background: rgba(var(--background-lightblue-rgba));
+  border-radius: 12px;
+}

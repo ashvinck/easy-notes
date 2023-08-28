@@ -9,3 +9,11 @@
 .cardsWrapper {
   margin: 10px 0px 10px 0px;
 }
+
+.activeCard{
+    background: rgba(var(--background-lightblue-rgba));
+}
+
+.small{
+color: rgba(94, 94, 94, 0.9);
+}

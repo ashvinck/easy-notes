@@ -1,24 +1,35 @@
-.list{
+.list {
   padding-top: 20px;
   padding-left: 0px;
 }
+
 .listItem {
   display: flex;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
-  transition: background-color 0.3s;
 }
 
-.listItem:hover{
+.listItem:hover:not(.active) {
   background-color: rgba(var(--hover-over-list-rgb));
 }
 
-.items{
+.listItem:active {
+  background-color: rgb(32, 32, 32);
+}
+
+.items {
   padding: 10px 10px 10px 30px;
 }
 
 .icon {
   margin-right: 15px;
+}
+
+.active{
+  background-color:rgb(32,32,32);
+}
+.active .icon{
+  color: rgb(81, 131, 245);
 }

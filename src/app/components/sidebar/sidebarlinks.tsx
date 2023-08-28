@@ -1,16 +1,34 @@
-'use client';
-
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './sidebarlinks.module.css';
 import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { v4 as uuidv4 } from 'uuid';
-uuidv4();
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { addNote, addNoteId } from '@/redux/features/notesSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
 const Sidebarlinks: React.FC = () => {
   const dispatch = useAppDispatch();
+  // to determine active id
+  const [activeItemId, setActiveItemId] = useState<string | null>(null);
+
+  // Items to display in the sidebar
+  const items = [
+    {
+      id: 'addNote',
+      icon: faPlus,
+      title: 'Add New Note',
+      onClick: () => {
+        handleItemClick('addNote');
+        handleAddNoteClick();
+      },
+    },
+    {
+      id: 'trash',
+      icon: faTrash,
+      title: 'Trash',
+      onClick: () => handleItemClick('trash'),
+    },
+  ];
 
   const handleAddNoteClick = () => {
     // Adding a new Note
@@ -25,22 +43,27 @@ const Sidebarlinks: React.FC = () => {
     dispatch(addNoteId(newNote.id));
   };
 
+  const handleItemClick = (itemId: string) => {
+    setActiveItemId(itemId);
+  };
+
   return (
     <ul className={styles.list}>
-      {/* ------ ADD Notes -------- */}
-      <li className={styles.listItem}>
-        <div className={styles.items} onClick={handleAddNoteClick}>
-          <FontAwesomeIcon icon={faPlus} className={styles.icon} />
-          <span className={styles.title}>Add New Note</span>
-        </div>
-      </li>
-      {/* ----- Add Trash ----------- */}
-      <li className={styles.listItem}>
-        <div className={styles.items}>
-          <FontAwesomeIcon icon={faTrash} className={styles.icon} />
-          <span className={styles.title}>Trash</span>
-        </div>
-      </li>
+      {/* ------- Mapping through the sidebar items ------- */}
+      {items.map((item) => (
+        <li
+          key={item.id}
+          className={`${styles.listItem} ${
+            activeItemId === item.id ? styles.active : ''
+          }`}
+          onClick={item.onClick}
+        >
+          <div className={styles.items}>
+            <FontAwesomeIcon icon={item.icon} className={styles.icon} />
+            <span className={styles.title}>{item.title}</span>
+          </div>
+        </li>
+      ))}
     </ul>
   );
 };
