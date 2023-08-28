@@ -2,48 +2,45 @@
 
 import React from 'react';
 import styles from './sidebarlinks.module.css';
-import { faList, faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { v4 as uuidv4 } from 'uuid';
+uuidv4();
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { setShowEditor } from '@/redux/features/notesSlice';
+import { addNote, addNoteId } from '@/redux/features/notesSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
 const Sidebarlinks: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const handleAddNoteClick = () => {
-    dispatch(setShowEditor(true)); // Dispatch the action to show the TextEditor
+    // Adding a new Note
+    const newNote = {
+      id: uuidv4(),
+      timeStamp: Date.now(),
+      title: 'Untitled Note',
+      description: 'Click to add a note',
+    };
+    // dispatching notes and note id to redux store
+    dispatch(addNote(newNote));
+    dispatch(addNoteId(newNote.id));
   };
-
-  const handleViewNotesClick = () => {
-    dispatch(setShowEditor(false)); // Dispatch the action to hide the TextEditor
-  };
-
-  // const sidebarLink = [
-  //   { title: 'Add New Note', icon: faPlus },
-  //   { title: 'View Notes', icon: faList },
-  //   { title: 'Trash', icon: faTrash },
-  // ];
 
   return (
     <ul className={styles.list}>
+      {/* ------ ADD Notes -------- */}
       <li className={styles.listItem}>
         <div className={styles.items} onClick={handleAddNoteClick}>
           <FontAwesomeIcon icon={faPlus} className={styles.icon} />
           <span className={styles.title}>Add New Note</span>
         </div>
       </li>
+      {/* ----- Add Trash ----------- */}
       <li className={styles.listItem}>
-        <div className={styles.items} onClick={handleViewNotesClick}>
-          <FontAwesomeIcon icon={faList} className={styles.icon} />
-          <span className={styles.title}>View Notes</span>
+        <div className={styles.items}>
+          <FontAwesomeIcon icon={faTrash} className={styles.icon} />
+          <span className={styles.title}>Trash</span>
         </div>
       </li>
-      {/* <li className={styles.listItem}>
-        <div className={styles.items} onClick={handleViewNotesClick}>
-          <FontAwesomeIcon icon={faList} className={styles.icon} />
-          <span className={styles.title}>View Notes</span>
-        </div>
-      </li> */}
     </ul>
   );
 };

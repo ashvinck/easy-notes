@@ -2,9 +2,11 @@ import React from 'react';
 import styles from './navbarLinks.module.css';
 // Fa icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList, faFilter, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faFilter, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { v4 as uuidv4 } from 'uuid';
+uuidv4();
 import { useAppDispatch } from '@/redux/hooks';
-import { setShowEditor } from '@/redux/features/notesSlice';
+import { addNote } from '@/redux/features/notesSlice';
 
 // Visible only in tablet and mobile devices
 
@@ -14,11 +16,14 @@ const NavbarLinks: React.FC = () => {
 
   // HandleClick to update state
   const handleAddNotesClick = () => {
-    dispatch(setShowEditor(true));
-  };
-
-  const handleShowNotesList = () => {
-    dispatch(setShowEditor(false));
+    // Adding a new Note
+    const newNote = {
+      id: uuidv4(),
+      timeStamp: Date.now(),
+      title: 'Untitled Note',
+      description: 'Click to add a note',
+    };
+    dispatch(addNote(newNote));
   };
 
   return (
@@ -32,11 +37,10 @@ const NavbarLinks: React.FC = () => {
       </div>
 
       {/* ------ View Notes List Button ------- */}
-      <div className={styles.links} onClick={handleShowNotesList}>
+      <div className={styles.links}>
         <FontAwesomeIcon
           className='d-block d-sm-block d-md-none cursor-pointer'
-          icon={faList}
-          onClick={handleShowNotesList}
+          icon={faTrash}
         />
       </div>
 

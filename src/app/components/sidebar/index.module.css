@@ -1,8 +1,8 @@
 
 .sidebarWrapper{
 background: rgba(var(--background-black-rgb));
-height: 100vh;
+height: 100%;
 color: rgb(208,208,208);
-font-family: var(--font-mono); 
+font-family: var(--font-mono);
 }
 

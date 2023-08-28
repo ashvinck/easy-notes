@@ -7,13 +7,9 @@ import Header from '../components/header';
 import NotesList from './notes-list/page';
 import Searchbar from '../components/header/searchbar';
 import TextEditor from './add-notes/page';
-import { useAppSelector } from '@/redux/hooks';
-import { selectShowEditor } from '@/redux/features/notesSlice';
 
 const Page = () => {
   // To Get the showEditor state from Redux
-  const showEditor = useAppSelector(selectShowEditor);
-
   return (
     // Only NotesList is visible below sm screens
     <div className='container-fluid g-0'>
@@ -21,7 +17,8 @@ const Page = () => {
         <div className={styles.wrapper}>
           <Header />
           <div className='col-12 g-0'>
-            {showEditor ? <TextEditor /> : <NotesList />}
+            <NotesList />
+            <TextEditor />
           </div>
         </div>
       </div>
