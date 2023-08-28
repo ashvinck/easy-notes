@@ -7,6 +7,7 @@
 
 .links{
   padding: 9px;
+  cursor: pointer;
 }
 .links:hover:not(.active) {
   background-color: rgba(var(--background-blue-rgb));

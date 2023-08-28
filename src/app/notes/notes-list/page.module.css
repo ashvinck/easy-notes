@@ -10,9 +10,22 @@
   margin: 10px 0px 10px 0px;
 }
 
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deleteIcon{
+  color: rgb(156, 12, 12);
+  cursor: pointer;
+}
+
+
 .activeCard{
     background: rgba(var(--background-lightblue-rgba));
 }
+
 
 .small{
 color: rgba(94, 94, 94, 0.9);
