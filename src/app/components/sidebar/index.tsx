@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './sidebar.module.css';
+import styles from './index.module.css';
 import Sidebarlinks from './sidebarlinks';
 import Categories from './categories';
 

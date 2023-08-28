@@ -1,0 +1,7 @@
+
+.actions{
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background: rgba(var(--background-light-grey-rgb));
+  font-family: var(--font-mono);
+}

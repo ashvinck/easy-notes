@@ -1,5 +1,12 @@
-.container{
-  display: flex;
-  flex-direction: row;
-  
+.wrapper {
+  background: rgba(var(--background-light-grey-rgb));
+  padding: 10px;
+  font-family: var(--font-mono);
+  height: 100vh;
+  border-right: 2px solid rgba(123, 123, 123, 0.5);
+}
+.searchBarWrapper{
+  background: rgba(var(--background-light-grey-rgb));
+  padding: 10px;
+  border-right: 2px solid rgba(123, 123, 123, 0.5);
 }

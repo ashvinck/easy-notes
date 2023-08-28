@@ -1,0 +1,19 @@
+.wrapper{
+  background: rgba(var(--background-light-grey-rgb));
+  padding: 10px;
+  font-family: var(--font-mono);
+}
+
+.input {
+  padding: 5px 5px 5px 15px;
+  border-radius: var(--input-border-radius);
+  width: 100%;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.input:focus {
+  border-color: rgb(92, 148, 252);
+  outline: none;
+}
