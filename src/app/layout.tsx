@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Providers } from '@/redux/provider';
+import { Provider } from 'react-redux';
+import { store } from '../redux/store';
 
 // Google Fonts
 import { Inter } from 'next/font/google';
@@ -30,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Provider store={store}>{children}</Provider>;
       </body>
     </html>
   );
