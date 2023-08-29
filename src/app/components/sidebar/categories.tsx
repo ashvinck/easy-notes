@@ -8,18 +8,22 @@ import { selectViewNotes, setSearchQuery } from '@/redux/features/notesSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const Categories: React.FC = () => {
+  // To dispatch to the store
   const dispatch = useAppDispatch();
 
+  // To determine the active item
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
   // Get the notes from the store
   const categoryList = useAppSelector(selectViewNotes);
 
+  // To view notes according to the category and set the active item
   const handleCategoryClick = (category: string) => {
     dispatch(setSearchQuery(category)); // Update search query in Redux store
     setActiveCategory(category);
   };
 
+  // To populate the list with the categories currently available
   const uniqueCategories = Array.from(
     new Set(categoryList.map((note) => note.category))
   );
@@ -35,6 +39,7 @@ const Categories: React.FC = () => {
         </div>
       </div>
       <ul className={styles.list}>
+        {/* ------  Mapping ------- */}
         {uniqueCategories.map((category) => (
           <li
             key={category}

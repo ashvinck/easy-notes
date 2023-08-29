@@ -15,6 +15,6 @@
 }
 
 .active{
-  background: rgba(var(--background-lightblue-rgba));
+  background: rgb(81, 131, 245);
   border-radius: 12px;
 }

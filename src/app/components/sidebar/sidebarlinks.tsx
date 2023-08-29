@@ -11,6 +11,7 @@ import {
 import { useAppDispatch } from '@/redux/hooks';
 
 const Sidebarlinks: React.FC = () => {
+  // To dispatch to the store
   const dispatch = useAppDispatch();
 
   // to determine active id
@@ -44,8 +45,8 @@ const Sidebarlinks: React.FC = () => {
     },
   ];
 
+  // Adding a new Note
   const handleAddNoteClick = () => {
-    // Adding a new Note
     const newNote = {
       id: uuidv4(),
       timeStamp: Date.now(),
@@ -58,10 +59,12 @@ const Sidebarlinks: React.FC = () => {
     dispatch(addNoteId(newNote.id));
   };
 
+  // Setting searchTerm to "" triggering list to display all notes
   const handleViewAllNotes = () => {
     dispatch(setSearchQuery(''));
   };
 
+  // To set the current item to active state
   const handleItemClick = (itemId: string) => {
     setActiveItemId(itemId);
   };

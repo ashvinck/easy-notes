@@ -9,7 +9,6 @@ import {
   addNoteId,
   selectCurrentNote,
   selectCurrentNoteId,
-  selectViewNotes,
   updateNotes,
 } from '@/redux/features/notesSlice';
 // import { addNote, selectShowEditor } from '@/redux/features/notesSlice';
@@ -30,6 +29,7 @@ const TextEditor: React.FC = () => {
     saveNote();
   };
 
+  // To update the note
   const saveNote = () => {
     const text = textAreaRef.current?.value;
     if (text) {
@@ -46,11 +46,13 @@ const TextEditor: React.FC = () => {
     }
   };
 
+  // To extract the title
   const extractTitle = (text: string) => {
     const firstLine = text.trim().split('\n')[0];
     return firstLine || 'Untitled';
   };
 
+  // To populate the textarea
   useEffect(() => {
     if (textAreaRef.current && getCurrentNote) {
       textAreaRef.current.value =
@@ -58,6 +60,8 @@ const TextEditor: React.FC = () => {
     }
   }, [getCurrentNote]);
 
+  // To focus the text area onclicking note card
+  //{ Functionality mainly used in small and md screen devices only }
   useEffect(() => {
     if (getNoteId && textAreaRef.current) {
       textAreaRef.current.focus();
