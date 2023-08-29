@@ -53,10 +53,10 @@ Welcome to the Easy Notes! This is a responsive web application built using Next
 
 ## Technologies Used
 
-Next.js
-Redux
-Bootstrap
-FontAwesome
+- Next.js
+- Redux
+- Bootstrap
+- FontAwesome
 
 
 ## Contributing
