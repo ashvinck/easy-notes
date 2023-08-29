@@ -1,10 +1,23 @@
 import React from 'react';
 import styles from './categories.module.css';
-import { faFolder, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { selectViewNotes, setSearchQuery } from '@/redux/features/notesSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 
 const Categories: React.FC = () => {
-  const categoriesList = [{ title: 'Recipe' }, { title: 'To-do List' }];
+  const dispatch = useAppDispatch();
+
+  // Get the notes from the store
+  const categoryList = useAppSelector(selectViewNotes);
+
+  const handleCategoryClick = (category: string) => {
+    dispatch(setSearchQuery(category)); // Update search query in Redux store
+  };
+
+  const uniqueCategories = Array.from(
+    new Set(categoryList.map((note) => note.category))
+  );
 
   return (
     <div className={styles.wrapper}>
@@ -13,17 +26,18 @@ const Categories: React.FC = () => {
           <div className='col-8'>
             <h5>Categories</h5>
           </div>
-          <div className='col-4'>
-            <FontAwesomeIcon icon={faPlus} />
-          </div>
+          <div className='col-4'>{/* <FontAwesomeIcon icon={faPlus} /> */}</div>
         </div>
       </div>
       <ul className={styles.list}>
-        {categoriesList.map((link) => (
-          <li key={link.title} className={styles.listItem}>
-            <div className={styles.items}>
+        {uniqueCategories.map((category) => (
+          <li key={category} className={styles.listItem}>
+            <div
+              className={styles.items}
+              onClick={() => handleCategoryClick(category)}
+            >
               <FontAwesomeIcon icon={faFolder} className={styles.icon} />
-              <span className={styles.title}>{link.title}</span>
+              <span className={styles.title}>{category}</span>
             </div>
           </li>
         ))}

@@ -6,12 +6,14 @@ export type Note = {
   title: string;
   timeStamp: number;
   description: string;
+  category: string;
 };
 
 export type NotesState = {
   notes: Note[];
   id: string;
   searchQuery: string;
+  showCategory: boolean;
 };
 
 // Initial State
@@ -19,6 +21,7 @@ const initialState = {
   notes: [],
   id: '',
   searchQuery: '',
+  showCategory: false,
 } as NotesState;
 
 // Notes Slice
@@ -62,14 +65,36 @@ export const notesSlice = createSlice({
         }
       }
     },
+    // To set Search Query
     setSearchQuery: (state, action: PayloadAction<string>) => {
       state.searchQuery = action.payload;
+    },
+    // to update the category
+    updateNoteCategory: (
+      state,
+      action: PayloadAction<{ id: string; category: string }>
+    ) => {
+      const { id, category } = action.payload;
+      const noteIndex = state.notes.findIndex((note) => note.id === id);
+      if (noteIndex !== -1) {
+        state.notes[noteIndex].category = category;
+      }
+    },
+    setShowCategory: (state, action: PayloadAction<boolean>) => {
+      state.showCategory = action.payload;
     },
   },
 });
 
-export const { addNote, addNoteId, updateNotes, deleteNotes, setSearchQuery } =
-  notesSlice.actions;
+export const {
+  addNote,
+  addNoteId,
+  updateNotes,
+  deleteNotes,
+  setSearchQuery,
+  updateNoteCategory,
+  setShowCategory
+} = notesSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
@@ -86,9 +111,11 @@ export const selectSearchedNotes = (state: RootState) => {
     ? state.notes.notes.filter(
         (note) =>
           note.title.toLowerCase().includes(searchQuery) ||
-          note.description.toLowerCase().includes(searchQuery)
+          note.description.toLowerCase().includes(searchQuery) ||
+          note.category.toLowerCase().includes(searchQuery)
       )
     : state.notes.notes;
 };
+export const selectShowCategories = (state: RootState) => state.notes.showCategory;
 
 export default notesSlice.reducer;

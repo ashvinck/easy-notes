@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // Font Awesome Icons
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { config } from '@fortawesome/fontawesome-svg-core';
+import Head from 'next/head';
 config.autoAddCss = false;
 
 // SEO

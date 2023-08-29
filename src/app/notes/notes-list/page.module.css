@@ -10,6 +10,16 @@
   margin: 10px 0px 10px 0px;
 }
 
+.tagAndTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tags{
+  color: rgba(var(--border-blue-rgb));
+  cursor: pointer;
+}
+
 .details{
   display: flex;
   align-items: center;

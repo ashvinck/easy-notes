@@ -37,6 +37,7 @@ const Sidebarlinks: React.FC = () => {
       timeStamp: Date.now(),
       title: 'Untitled Note',
       description: 'Click to add a note',
+      category: 'undefined',
     };
     // dispatching notes and note id to redux store
     dispatch(addNote(newNote));
