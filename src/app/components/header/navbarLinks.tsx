@@ -33,7 +33,7 @@ const NavbarLinks: React.FC = () => {
       timeStamp: Date.now(),
       title: 'Untitled Note',
       description: 'Add description',
-      category: 'Not Assigned',
+      category: 'Note-1',
     };
     // dispatching new note to the store
     dispatch(addNote(newNote));

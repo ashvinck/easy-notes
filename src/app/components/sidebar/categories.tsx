@@ -40,9 +40,9 @@ const Categories: React.FC = () => {
       </div>
       <ul className={styles.list}>
         {/* ------  Mapping ------- */}
-        {uniqueCategories.map((category) => (
+        {uniqueCategories.map((category, index) => (
           <li
-            key={category}
+            key={index}
             className={`${styles.listItem} ${
               activeCategory === category ? styles.activeCategory : ''
             }`}

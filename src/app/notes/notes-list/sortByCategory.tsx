@@ -27,10 +27,10 @@ const SortByCategory: React.FC = () => {
         <h6>Categories</h6>
       </div>
       <div className={styles.wrapper}>
-        {uniqueCategories.map((category) => (
+        {uniqueCategories.map((category, index) => (
           <div
             className={styles.cardContainer}
-            key={category}
+            key={index}
             onClick={() => handleCategoryClick(category)}
           >
             <div

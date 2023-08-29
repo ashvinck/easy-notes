@@ -109,10 +109,13 @@ export const selectSearchedNotes = (state: RootState) => {
   const searchQuery = state.notes.searchQuery.toLowerCase();
   return searchQuery
     ? state.notes.notes.filter(
-        (note) =>
-          note.title.toLowerCase().includes(searchQuery) ||
-          note.description.toLowerCase().includes(searchQuery) ||
-          note.category.toLowerCase().includes(searchQuery)
+      (note) => {
+        const titleIncludesQuery = note.title.toLowerCase().includes(searchQuery);
+        const descriptionIncludesQuery = note.description.toLowerCase().includes(searchQuery);
+        const categoryIncludesQuery = note.category && note.category.toLowerCase().includes(searchQuery);
+
+        return titleIncludesQuery || descriptionIncludesQuery || categoryIncludesQuery;
+        }
       )
     : state.notes.notes;
 };

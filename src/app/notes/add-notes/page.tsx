@@ -17,7 +17,6 @@ const TextEditor: React.FC = () => {
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   // getting state from the redux
   const getNoteId = useAppSelector(selectCurrentNoteId);
-  console.log('currentNoteId', getNoteId);
 
   const getCurrentNote = useAppSelector(selectCurrentNote);
 
@@ -39,6 +38,7 @@ const TextEditor: React.FC = () => {
         timeStamp: Date.now(),
         title: title,
         description: description,
+        category: getCurrentNote?.category || 'Note-1',
       };
       dispatch(updateNotes(newNote));
       dispatch(addNoteId(newNote.id));
