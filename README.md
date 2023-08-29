@@ -1,6 +1,6 @@
 # Easy Notes
 
-Welcome to the Easy Notes! This is a responsive web application built using Next.js (app-router) that allows users to create, update, delete, and categorize their notes. The app utilizes Redux for state management and Bootstrap for styling.
+Welcome to the [Easy Notes!](https://easy-notes-2sfp3640z-ashvinck.vercel.app/) This is a responsive web application built using Next.js (app-router) that allows users to create, update, delete, and categorize their notes. The app utilizes Redux for state management and Bootstrap for styling.
 
 ## Features
 
