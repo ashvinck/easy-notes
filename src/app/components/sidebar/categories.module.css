@@ -21,6 +21,12 @@
 .listItem:hover {
   background-color: rgba(var(--hover-over-list-rgb));
 }
+.activeCategory{
+  background-color: rgb(32, 32, 32);
+}
+.activeCategory .icon{
+  color: rgb(81, 131, 245);
+}
 
 .items {
   padding: 10px 10px 10px 30px;

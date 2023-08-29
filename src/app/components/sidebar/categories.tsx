@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import styles from './categories.module.css';
 import { faFolder } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,11 +10,14 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 const Categories: React.FC = () => {
   const dispatch = useAppDispatch();
 
+  const [activeCategory, setActiveCategory] = useState<string | null>(null);
+
   // Get the notes from the store
   const categoryList = useAppSelector(selectViewNotes);
 
   const handleCategoryClick = (category: string) => {
     dispatch(setSearchQuery(category)); // Update search query in Redux store
+    setActiveCategory(category);
   };
 
   const uniqueCategories = Array.from(
@@ -31,11 +36,14 @@ const Categories: React.FC = () => {
       </div>
       <ul className={styles.list}>
         {uniqueCategories.map((category) => (
-          <li key={category} className={styles.listItem}>
-            <div
-              className={styles.items}
-              onClick={() => handleCategoryClick(category)}
-            >
+          <li
+            key={category}
+            className={`${styles.listItem} ${
+              activeCategory === category ? styles.activeCategory : ''
+            }`}
+            onClick={() => handleCategoryClick(category)}
+          >
+            <div className={styles.items}>
               <FontAwesomeIcon icon={faFolder} className={styles.icon} />
               <span className={styles.title}>{category}</span>
             </div>

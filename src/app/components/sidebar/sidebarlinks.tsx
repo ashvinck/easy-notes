@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import styles from './sidebarlinks.module.css';
-import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPlus, faList } from '@fortawesome/free-solid-svg-icons';
 import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { addNote, addNoteId } from '@/redux/features/notesSlice';
+import {
+  addNote,
+  addNoteId,
+  setSearchQuery,
+} from '@/redux/features/notesSlice';
 import { useAppDispatch } from '@/redux/hooks';
 
 const Sidebarlinks: React.FC = () => {
   const dispatch = useAppDispatch();
+
   // to determine active id
   const [activeItemId, setActiveItemId] = useState<string | null>(null);
 
@@ -20,6 +25,15 @@ const Sidebarlinks: React.FC = () => {
       onClick: () => {
         handleItemClick('addNote');
         handleAddNoteClick();
+      },
+    },
+    {
+      id: 'viewAllNotes',
+      icon: faList,
+      title: 'Notes List',
+      onClick: () => {
+        handleItemClick('viewAllNotes');
+        handleViewAllNotes();
       },
     },
     {
@@ -42,6 +56,10 @@ const Sidebarlinks: React.FC = () => {
     // dispatching notes and note id to redux store
     dispatch(addNote(newNote));
     dispatch(addNoteId(newNote.id));
+  };
+
+  const handleViewAllNotes = () => {
+    dispatch(setSearchQuery(''));
   };
 
   const handleItemClick = (itemId: string) => {
