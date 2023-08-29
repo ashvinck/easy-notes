@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './page.module.css';
 import { useAppSelector } from '@/redux/hooks';
 import { selectSearchedNotes } from '@/redux/features/notesSlice';
-import NotesCard from './notesCard';
+import NotesCard from '../../components/notesCard/notesCard';
 
 // List of Notes
 const NotesList: React.FC = () => {

@@ -9,7 +9,7 @@ import Searchbar from '../components/header/searchbar';
 import TextEditor from './add-notes/page';
 import { useAppSelector } from '@/redux/hooks';
 import { selectShowCategories } from '@/redux/features/notesSlice';
-import SortByCategory from './notes-list/sortByCategory';
+import SortByCategory from '../components/category/sortByCategory';
 
 const Page = () => {
   // To Get the showEditor state from Redux
