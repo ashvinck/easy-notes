@@ -11,7 +11,6 @@ import {
   selectCurrentNoteId,
   updateNotes,
 } from '@/redux/features/notesSlice';
-// import { addNote, selectShowEditor } from '@/redux/features/notesSlice';
 
 const TextEditor: React.FC = () => {
   // to focus on the text editor when sidebar link is clicked

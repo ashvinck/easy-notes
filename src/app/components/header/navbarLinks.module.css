@@ -15,6 +15,6 @@
 }
 
 .active{
-  background: rgb(81, 131, 245);
+  background:rgba(var(--background-icon-active-rgb));
   border-radius: 12px;
 }

@@ -74,11 +74,6 @@ const NavbarLinks: React.FC = () => {
       },
     },
     {
-      id: 'trash',
-      icon: faTrash,
-      onClick: () => handleItemClick('trash'),
-    },
-    {
       id: 'sort',
       icon: faFilter,
       onClick: () => {
@@ -110,4 +105,4 @@ const NavbarLinks: React.FC = () => {
   );
 };
 
-export default NavbarLinks;
+export default React.memo(NavbarLinks);

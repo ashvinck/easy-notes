@@ -16,7 +16,7 @@
 }
 
 .listItem:active {
-  background-color: rgb(32, 32, 32);
+  background-color: rgba(var(--background-active-rgb))
 }
 
 .items {
@@ -28,8 +28,8 @@
 }
 
 .active{
-  background-color:rgb(32,32,32);
+  background-color:rgba(var(--background-active-rgb))
 }
 .active .icon{
-  color: rgb(81, 131, 245);
+  color:rgba(var(--background-icon-active-rgb));
 }

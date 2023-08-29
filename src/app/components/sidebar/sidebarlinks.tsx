@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './sidebarlinks.module.css';
-import { faTrash, faPlus, faList } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faList } from '@fortawesome/free-solid-svg-icons';
 import { v4 as uuidv4 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -36,12 +36,6 @@ const Sidebarlinks: React.FC = () => {
         handleItemClick('viewAllNotes');
         handleViewAllNotes();
       },
-    },
-    {
-      id: 'trash',
-      icon: faTrash,
-      title: 'Trash',
-      onClick: () => handleItemClick('trash'),
     },
   ];
 

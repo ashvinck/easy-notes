@@ -7,15 +7,16 @@
   --border-radius: 12px;
   --input-border-radius: 6px;
   --button-border-radius: 5px;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
   --background-blue-rgb: 136,173,250;
   --background-lightblue-rgba:160,189,255,255 ;
   --background-light-grey-rgb: 229,229,229;
+  --background-icon-active-rgb: 81, 131, 245;
+  --background-active-rgb:32,32,32;
   --border-blue-rgb: 64,123,255,255;
   --box-shadow-blue-rgb: 164,188,251;
   --background-black-rgb: 45,45,45;
   --hover-over-list-rgb:69,69,69;
+  --heading-component-rgb:122, 122, 122;
 }
 
 * {
