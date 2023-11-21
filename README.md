@@ -66,3 +66,7 @@ Welcome to the [Easy Notes!](https://easy-notes-2sfp3640z-ashvinck.vercel.app/) 
 ## Need Help?
 
  If you encounter any issues or have questions, please feel free to open an issue in the repository. We're here to help!
+
+# Backend Repository
+  
+  The link to the [backend repo](https://github.com/ashvinck/EasyNotes-backend) can be found here.
