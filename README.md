@@ -18,7 +18,7 @@ Welcome to the [Easy Notes!](https://easy-notes-2sfp3640z-ashvinck.vercel.app/) 
 
   ```bash
   git clone https://github.com/ashvinck/easy-notes
-  cd notes-app
+  cd easy-notes
   ```
 
 2. **Install Dependencies:**
